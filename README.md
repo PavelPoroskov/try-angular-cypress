@@ -3,14 +3,14 @@ https://testdriven.io/blog/testing-angular-with-cypress-and-docker/
 with my modifications  
 ) cypress.json: "modifyObstructiveCode": false,  
 ) last version:  
-    <p>angular 8,
-       cypress 3.3.1,  
-       FROM node:10.16.0-jessie  
-       FROM nginx:stable  
-       FROM cypress/browsers</p>  
+    angular 8,
+    cypress 3.3.1,  
+    FROM node:10.16.0-jessie  
+    FROM nginx:stable  
+    FROM cypress/browsers  
 ) Dockerfile  
-   * COPY --from=builder /usr/src/app/dist/angular-cypress /usr/share/nginx/html  
-   * was COPY --from=builder /usr/src/app/dist /usr/share/nginx/html  
+    COPY --from=builder /usr/src/app/dist/angular-cypress /usr/share/nginx/html  
+    was COPY --from=builder /usr/src/app/dist /usr/share/nginx/html  
 
 
 
