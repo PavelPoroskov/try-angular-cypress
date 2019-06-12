@@ -9,7 +9,7 @@ with my modifications
     + FROM nginx:stable  
     + FROM cypress/browsers  
 * Dockerfile  
-    + COPY --from=builder /usr/src/app/dist/angular-cypress /usr/share/nginx/html  
+    + COPY --from=builder /usr/src/app/dist/try-angular-cypress /usr/share/nginx/html  
     + was COPY --from=builder /usr/src/app/dist /usr/share/nginx/html  
 
 

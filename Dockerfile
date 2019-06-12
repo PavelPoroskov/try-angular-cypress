@@ -21,6 +21,7 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
 RUN npm install --production
 RUN npm install -g @angular/cli --unsafe
+RUN npm install @angular-devkit/build-angular --save-dev
 
 # add app
 COPY . /usr/src/app
@@ -36,7 +37,7 @@ RUN npm run build
 FROM nginx:stable
 
 # copy artifact build from the 'build environment'
-COPY --from=builder /usr/src/app/dist/angular-cypress /usr/share/nginx/html
+COPY --from=builder /usr/src/app/dist/try-angular-cypress /usr/share/nginx/html
 
 # expose port 80
 EXPOSE 80
